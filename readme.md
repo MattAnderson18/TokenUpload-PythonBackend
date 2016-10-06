@@ -5,3 +5,6 @@ It is called whenever Token Upload sends a request to the webserver which contai
 Once the data has been received successfully, the program generates a random name based on a random 6 digit integer and encodes it in base64 which it then stores into a string variable in utf-8 format and appends the file type to the end. This new name is then checked against existing files in the image directory to make sure no other files exist with the same name. If a matching file is found, the program generates more random names until it gets a unique one.
 
 Once the name has been verified, the image data is decoded from base64 into bytecode and a binary writer instance is opened using the file name that was generated. This writer instance is then used to store the bytecode in binary format to the image file and is then closed. If the upload fails at this point then an error is sent back to the Token Upload plugin on ScreenCloud.
+
+###usage:
+drag and drop into the images directory on your web server and set the 'token' variable to what you want to use (make sure it's secure and keep it secret!) and set the 'url' variable to the url used to access the images directory on the webserver from any browser
